@@ -1,11 +1,11 @@
-// const { getMagicCard } = require('../magic');
-// require('../../startest/mockSetup');
+const { getMagicCard } = require('../magic');
+require('../../startest/mockSetup');
 
 jest.setTimeout(10000);
 
 describe('1. Testes da função getMagicCard', () => {
   it('1.1 Verifique se getMagicCard é uma função.', () => {
-    // implemente seus testes aqui
+    expect(typeof getMagicCard).toBe('function');
   });
 
   it('1.2 Verifique se a função fetch foi chamada.', async () => {
