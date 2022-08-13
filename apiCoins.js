@@ -6,12 +6,13 @@ const fetchCoins = async () => {
     result
     .filter((asset, index) => index < 10)
     .map((asset) => {
-        const {name, symbol, priceUsd} = asset;
-        const elementUl = document.getElementById("coins-list");
-        const elementLi = document.createElement("li");
+        const { name, symbol, priceUsd } = asset;
+        const elementUl = document.getElementById('coins-list');
+        const elementLi = document.createElement('li');
         elementUl.appendChild(elementLi);
-        elementLi.innerText = `${asset.name} (${symbol}): ${Number(priceUsd).toFixed(2)}`;
-    })
-
+        elementLi.innerText = `${name} (${symbol}): ${Number(priceUsd).toFixed(2)}`;
+        return elementLi;
+    });
 };
+
 fetchCoins();
