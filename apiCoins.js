@@ -3,7 +3,9 @@ const fetchCoins = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     const result = data.data;
-    result.map((asset) => {
+    result
+    .filter((asset, index) => index < 10)
+    .map((asset) => {
         const {name, symbol, priceUsd} = asset;
         const elementUl = document.getElementById("coins-list");
         const elementLi = document.createElement("li");
