@@ -2,8 +2,7 @@ const fetchCoins = async () => {
     const URL = 'https://api.coincap.io/v2/assets';
     const response = await fetch(URL);
     const data = await response.json();
-    const result = data.data;
-    result
+    data.data
     .filter((asset, index) => index < 10)
     .map((asset) => {
         const { name, symbol, priceUsd } = asset;
