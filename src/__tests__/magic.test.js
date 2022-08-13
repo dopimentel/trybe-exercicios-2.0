@@ -14,8 +14,9 @@ describe('1. Testes da função getMagicCard', () => {
   });
 
   it('1.3 Verifique se a função fetch foi chamada com o endpoint correto', async () => {
-    // await getMagicCard('130550');
-    // implemente seus testes aqui
+    await getMagicCard('130550');
+    const URL = 'https://api.magicthegathering.io/v1/cards/130550';
+    expect(fetch).toHaveBeenCalledWith(URL);
   });
 });
 
